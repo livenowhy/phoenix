@@ -20,9 +20,7 @@ class AbstractBase(models.Model):
     id = models.AutoField(primary_key=True, auto_created=True)
     uuid = models.CharField(max_length=36, default=gen_uuid, unique=True)
     created_at = models.DateTimeField("创建时间", auto_now_add=True, help_text='创建时间')
-    updated_at = models.DateTimeField("更新时间", auto_now_add=True,
-                                      help_text='更新时间',
-                                      null=True)
+    updated_at = models.DateTimeField("更新时间", auto_now_add=True, help_text='更新时间', null=True)
     deleted_at = models.DateTimeField("删除时间", help_text='删除时间', null=True)
     deleted = models.BooleanField("是否删除", default=False)
     description = models.CharField("描述信息", max_length=256, null=True, blank=True)
